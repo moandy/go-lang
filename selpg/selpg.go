@@ -22,19 +22,13 @@ type selpgArgs struct {
 
 var progname string // name of program, used to display error message
 
-/**
-* used to diplay the usage of selpg
- */
+
 func usage() {
 	fmt.Fprintf(os.Stderr,
 		"\nUSAGE: %s -s=start_page(number) -e=end_page(number) [ -f | -l=lines_per_page(number) ] [ -ddest ] [ in_filename ]\n", progname)
 }
 
-/**
-* used to split the arguments to store in the selpgArgs var
-* @param argNums, args, saAddr
-* argNums is the number of arguments, args is the array of arguments, saAddr is a pointer to a selpgArgs
- */
+
 func processArgs(argNums int, args []string, saAddr *selpgArgs) {
 	// check if the number of arguments is valid
 	if argNums < 3 {
@@ -131,11 +125,7 @@ func processArgs(argNums int, args []string, saAddr *selpgArgs) {
 	}
 }
 
-/**
-* do operation correspoding to the arguments stored in the selpgArgs var
-* @param saAddr
-* saAddr is a pointer to a selpgArgs
- */
+
 func processInput(saAddr *selpgArgs) {
 	// set the input source
 	fin := os.Stdin
@@ -229,9 +219,7 @@ func processInput(saAddr *selpgArgs) {
 	fmt.Fprintf(os.Stderr, "%s: done\n", progname)
 }
 
-/**
-* main function, run selpg
- */
+
 func main() {
 	sa := new(selpgArgs)
 	progname = os.Args[0] // get the name of the program
