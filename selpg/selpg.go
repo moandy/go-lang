@@ -204,8 +204,6 @@ func processInput(saAddr *selpgArgs) {
 		}
 	}
 
-	// end of dealing page type
-
 	if pageCnt < saAddr.startPage {
 		fmt.Fprintf(os.Stderr, "%s: start_page (%d) greater than total pages (%d), no output written\n", progname, saAddr.startPage, pageCnt)
 	} else {
